@@ -1,3 +1,5 @@
+import petStore from "../stores/petStore";
+
 export default function PetItem({ pet, handleAdopt }) {
   return (
     <div class="col-lg-4 col-md-8 col-sm-10">
@@ -8,7 +10,7 @@ export default function PetItem({ pet, handleAdopt }) {
           <button
             type="button"
             class="btn btn-info"
-            onClick={() => handleAdopt(pet.id)}
+            onClick={() => petStore.adoptPet(pet.id)}
           >
             Adopt
           </button>
