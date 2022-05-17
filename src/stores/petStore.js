@@ -14,8 +14,15 @@ class PetStore {
 
   addPet = (newPet) => {
     newPet["id"] = this.pets.length + 1;
+    //newPet.id = this.pets[this.pets.length-1]+1       Rahaf's way
     console.log(newPet);
     this.pets.push(newPet);
+  };
+
+  updatePet = (updatedPet) => {
+    this.pets = this.pets.map((pet) =>
+      pet.id === updatedPet.id ? updatedPet : pet
+    );
   };
 }
 

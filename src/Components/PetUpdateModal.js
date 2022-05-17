@@ -16,7 +16,7 @@ export default function PetUpdateModal({ pet }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(updatedPet);
-    // petStore.addPet(updatedPet);
+    petStore.updatePet(updatedPet);
     handleClose();
   };
 
@@ -73,7 +73,7 @@ export default function PetUpdateModal({ pet }) {
               />
             </Form.Group>
             <Button type="submit" variant="primary" onClick={handleSubmit}>
-              Submit
+              Update
             </Button>
             <Button variant="secondary" onClick={handleClose}>
               Close
