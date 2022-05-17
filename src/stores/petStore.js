@@ -11,6 +11,12 @@ class PetStore {
   adoptPet = (petId) => {
     this.pets = this.pets.filter((pet) => pet.id !== petId);
   };
+
+  addPet = (newPet) => {
+    newPet["id"] = this.pets.length + 1;
+    console.log(newPet);
+    this.pets.push(newPet);
+  };
 }
 
 const petStore = new PetStore();

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import PetItem from "./PetItem";
 import petStore from "../stores/petStore";
 import { observer } from "mobx-react";
+import PetCreateModal from "./PetCreateModal";
 
-function PetsList({ petsData }) {
+function PetsList() {
   const [query, setQuery] = useState("");
   const [type, setType] = useState("");
   // const [pets, setPets] = useState(petsData);
@@ -19,7 +20,7 @@ function PetsList({ petsData }) {
     )
     .map((pet) => <PetItem key={pet.id} pet={pet} />);
   return (
-    <section id="doctors" class="doctor-section pt-140">
+    <section id="doctors" className="doctor-section pt-140">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xxl-5 col-xl-6 col-lg-7">
@@ -51,6 +52,7 @@ function PetsList({ petsData }) {
                 <option value="Dog">Dog</option>
                 <option value="Rabbit">Rabbit</option>
               </select>
+              <PetCreateModal />
             </div>
           </div>
         </div>
